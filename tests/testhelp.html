@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Testing Word Count Function</title>
+</head>
+<body>
+    <h1>How to Perform Unit Testing for Word Count</h1>
+    <ol>
+        <li>
+            <strong>Write the Word Count Function</strong>
+            <pre><code>def word_count(text):
+    return len(text.split())</code></pre>
+        </li>
+        <li>
+            <strong>Create Unit Tests</strong>
+            <p>Use Python's <code>unittest</code> framework:</p>
+            <pre><code>import unittest
+
+class TestWordCount(unittest.TestCase):
+    def test_empty_string(self):
+        self.assertEqual(word_count(""), 0)
+
+    def test_single_word(self):
+        self.assertEqual(word_count("hello"), 1)
+
+    def test_multiple_words(self):
+        self.assertEqual(word_count("hello world"), 2)
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+        </li>
+        <li>
+            <strong>Run the Tests</strong>
+            <p>Execute the test file:</p>
+            <pre><code>python test_wordcount.py</code></pre>
+        </li>
+    </ol>
+</body>
+</html>
